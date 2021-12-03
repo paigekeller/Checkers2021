@@ -16,6 +16,7 @@
 		EE88281B27591BB900CC3E6B /* CheckersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88281A27591BB900CC3E6B /* CheckersTests.swift */; };
 		EE88282527591BB900CC3E6B /* CheckersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88282427591BB900CC3E6B /* CheckersUITests.swift */; };
 		EE88282727591BB900CC3E6B /* CheckersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88282627591BB900CC3E6B /* CheckersUITestsLaunchTests.swift */; };
+		EE88283427591CB900CC3E6B /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88283327591CB900CC3E6B /* GameScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EE88282027591BB900CC3E6B /* CheckersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE88282427591BB900CC3E6B /* CheckersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersUITests.swift; sourceTree = "<group>"; };
 		EE88282627591BB900CC3E6B /* CheckersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EE88283327591CB900CC3E6B /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				EE88280527591BB900CC3E6B /* SceneDelegate.swift */,
 				EE88280727591BB900CC3E6B /* ViewController.swift */,
 				EE88280927591BB900CC3E6B /* Main.storyboard */,
+				EE88283327591CB900CC3E6B /* GameScreen.swift */,
 				EE88280C27591BB900CC3E6B /* Assets.xcassets */,
 				EE88280E27591BB900CC3E6B /* LaunchScreen.storyboard */,
 				EE88281127591BB900CC3E6B /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE88280827591BB900CC3E6B /* ViewController.swift in Sources */,
+				EE88283427591CB900CC3E6B /* GameScreen.swift in Sources */,
 				EE88280427591BB900CC3E6B /* AppDelegate.swift in Sources */,
 				EE88280627591BB900CC3E6B /* SceneDelegate.swift in Sources */,
 			);
