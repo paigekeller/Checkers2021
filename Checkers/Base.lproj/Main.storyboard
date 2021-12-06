@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pek-D3-YpQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -16,8 +16,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-oE-4AD">
+                                <rect key="frame" x="77" y="204" width="261" height="41"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
+                                <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="3" height="1"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="argyle-buttons-red-checker-asset-button-embellishment-boys-men-fall-game-piece" translatesAutoresizingMaskIntoConstraints="NO" id="Kc9-RP-Og8">
+                                <rect key="frame" x="60" y="303" width="294" height="290"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-uN-iYg">
+                                <rect key="frame" x="138" y="620" width="139" height="209"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-w1-phJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="45.5"/>
+                                        <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Single Player">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="pek-D3-YpQ" kind="show" id="jkn-1S-iKq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-ro-KAa">
+                                        <rect key="frame" x="0.0" y="81.5" width="139" height="46"/>
+                                        <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Local">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-mW-aue">
+                                        <rect key="frame" x="0.0" y="163.5" width="139" height="45.5"/>
+                                        <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Online">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="116" id="0sZ-gL-8bG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENQ-uN-iYg" secondAttribute="bottom" constant="33" id="3Fg-OT-5xb"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9FE-bh-R6f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENQ-uN-iYg" secondAttribute="trailing" constant="137" id="Cnj-X8-MPA"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="LHS-oS-OSl"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="top" secondItem="Kc9-RP-Og8" secondAttribute="bottom" constant="27" id="Lhp-LA-bMc"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.233259" id="ROk-cD-6YS"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="top" secondItem="p2Z-oE-4AD" secondAttribute="bottom" constant="58" id="SiQ-zv-sKF"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0457589" id="dUY-Ka-8vV"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="e8j-33-bHd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="nMr-Mz-JkX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="w1c-Ja-F3G"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2z-2N-Q5q"/>
                 </viewController>
@@ -33,10 +92,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woodTexture" translatesAutoresizingMaskIntoConstraints="NO" id="CVK-ap-7Qd">
-                                <rect key="frame" x="-102" y="-100" width="618" height="1097"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vvW-Ph-yDv">
                                 <rect key="frame" x="8" y="236" width="399" height="401"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,14 +128,14 @@
                         <viewLayoutGuide key="safeArea" id="D9m-T1-FK0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Fye-1I-XU4"/>
                     <connections>
                         <outlet property="collectionView" destination="vvW-Ph-yDv" id="YNk-cW-eDF"/>
-                        <outlet property="image" destination="CVK-ap-7Qd" id="opj-OV-M5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acs-xJ-HH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830.4347826086957" y="79.6875"/>
+            <point key="canvasLocation" x="1830" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kN4-iR-dnb">
@@ -102,7 +157,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="woodTexture" width="1068" height="1600"/>
+        <image name="argyle-buttons-red-checker-asset-button-embellishment-boys-men-fall-game-piece" width="456" height="456"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

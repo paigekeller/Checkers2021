@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
 //    @IBAction func onePlayer(_ sender: UIButton) {
 //        AppData.playerType = 1
 //    }
