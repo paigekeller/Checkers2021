@@ -46,7 +46,7 @@
                                         <rect key="frame" x="0.0" y="81.5" width="139" height="46"/>
                                         <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Local">
+                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Local (Coming Soon)">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="0.0" y="163.5" width="139" height="45.5"/>
                                         <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Online">
+                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Online (Coming Soon)">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
