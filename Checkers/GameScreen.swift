@@ -33,6 +33,20 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        var originalSpot = indexPath.row
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 64
     }
@@ -99,5 +113,11 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         return cell
     }
+    
+    func move(movingTo: Int) {
+        
+        
+    }
+    
     
 }
