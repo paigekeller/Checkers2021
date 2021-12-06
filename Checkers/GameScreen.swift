@@ -56,6 +56,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         
         
+        
         if (indexPath.row < 8) {
         if indexPath.row % 2 == 0 {
         cell.backgroundColor = UIColor.black
