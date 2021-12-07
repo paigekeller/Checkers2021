@@ -20,5 +20,21 @@ class CustomCollectionCell: UICollectionViewCell {
         }
     }
     
+    func setImage(name: String) {
+        if name == "" {
+            image.image = nil
+        } else {
+        image.image = UIImage(named: name)
+        }
+    }
+    
+    func checkCheck() -> Bool {
+        if image.image == nil {
+            return false
+        }
+        
+        return true
+    }
+    
     
 }
