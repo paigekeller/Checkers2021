@@ -40,7 +40,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="selectedSinglePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qo6-Wc-Mdf"/>
-                                            <segue destination="pek-D3-YpQ" kind="show" id="jkn-1S-iKq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-ro-KAa">
@@ -87,6 +86,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2z-2N-Q5q"/>
+                    <connections>
+                        <segue destination="pek-D3-YpQ" kind="show" identifier="toGame" id="xog-vX-Puz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

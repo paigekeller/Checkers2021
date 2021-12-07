@@ -23,16 +23,23 @@ class ViewController: UIViewController {
 
     @IBAction func selectedSinglePlayer(_ sender: UIButton) {
         AppData.playerType = 0
+        performSegue(withIdentifier: "toGame", sender: "home")
     }
     
     @IBAction func selectedTwoPlayerLocal(_ sender: UIButton) {
         AppData.playerType = 1
+        performSegue(withIdentifier: "toGame", sender: "home")
     }
     
     @IBAction func selectedTwoPlayerOnline(_ sender: UIButton) {
         AppData.playerType = 2
+        performSegue(withIdentifier: "toGame", sender: "home")
     }
     
+    
+    @IBAction func unwind(_ seg: UIStoryboardSegue){
+        AppData.playerType = Int()
+    }
 //    @IBAction func onePlayer(_ sender: UIButton) {
 //        AppData.playerType = 1
 //    }
