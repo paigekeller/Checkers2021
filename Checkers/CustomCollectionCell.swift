@@ -20,4 +20,5 @@ class CustomCollectionCell: UICollectionViewCell {
         }
     }
     
+    
 }
