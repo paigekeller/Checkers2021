@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wv6-I3-Kgg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-oE-4AD">
-                                <rect key="frame" x="77" y="204" width="261" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-oE-4AD">
+                                <rect key="frame" x="77" y="120" width="261" height="41"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -26,56 +26,64 @@
                                 <size key="shadowOffset" width="3" height="1"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="argyle-buttons-red-checker-asset-button-embellishment-boys-men-fall-game-piece" translatesAutoresizingMaskIntoConstraints="NO" id="Kc9-RP-Og8">
-                                <rect key="frame" x="60" y="303" width="294" height="290"/>
+                                <rect key="frame" x="60" y="246" width="294" height="290"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-uN-iYg">
-                                <rect key="frame" x="138" y="620" width="139" height="209"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-uN-iYg">
+                                <rect key="frame" x="87" y="607" width="240" height="165"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-w1-phJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                         <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Single Player">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="selectedSinglePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qo6-Wc-Mdf"/>
                                             <segue destination="pek-D3-YpQ" kind="show" id="jkn-1S-iKq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-ro-KAa">
-                                        <rect key="frame" x="0.0" y="81.5" width="139" height="46"/>
+                                        <rect key="frame" x="0.0" y="60.5" width="240" height="44"/>
                                         <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Two Player Local (Coming Soon)">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectedTwoPlayerLocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbE-6W-viL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-mW-aue">
-                                        <rect key="frame" x="0.0" y="163.5" width="139" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="240" height="43.5"/>
                                         <color key="backgroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Two Player Online (Coming Soon)">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectedTwoPlayerOnline:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKA-SJ-nyw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="116" id="0sZ-gL-8bG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENQ-uN-iYg" secondAttribute="bottom" constant="33" id="3Fg-OT-5xb"/>
-                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="9FE-bh-R6f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENQ-uN-iYg" secondAttribute="trailing" constant="137" id="Cnj-X8-MPA"/>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="LHS-oS-OSl"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="top" secondItem="Kc9-RP-Og8" secondAttribute="bottom" constant="27" id="Lhp-LA-bMc"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.233259" id="ROk-cD-6YS"/>
-                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="top" secondItem="p2Z-oE-4AD" secondAttribute="bottom" constant="58" id="SiQ-zv-sKF"/>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0457589" id="dUY-Ka-8vV"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="e8j-33-bHd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="nMr-Mz-JkX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="w1c-Ja-F3G"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0457589" id="0We-41-LDV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="8Dc-UK-huZ"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="9Vz-Zt-Pao"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENQ-uN-iYg" secondAttribute="bottom" constant="90" id="M4d-bD-RYg"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Nak-7Q-7f2"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.184152" id="QpO-N0-HXs"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="VYb-lS-yuA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENQ-uN-iYg" secondAttribute="trailing" constant="87" id="WSj-2M-uSJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="fNg-mg-9OO"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="gPR-QT-TjV"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="top" secondItem="p2Z-oE-4AD" secondAttribute="bottom" constant="85" id="hT2-0Z-o0h"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="top" secondItem="Kc9-RP-Og8" secondAttribute="bottom" constant="71" id="o7w-sc-YG8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2z-2N-Q5q"/>
@@ -124,18 +132,38 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhP-Wt-8p5">
+                                <rect key="frame" x="103" y="775" width="209" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
+                                <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="3" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bn-hu-koa">
+                                <rect key="frame" x="103" y="88" width="209" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
+                                <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="3" height="1"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D9m-T1-FK0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fye-1I-XU4"/>
                     <connections>
                         <outlet property="collectionView" destination="vvW-Ph-yDv" id="YNk-cW-eDF"/>
+                        <outlet property="playerTwoLabel" destination="3bn-hu-koa" id="7Qw-eO-YEO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acs-xJ-HH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="70"/>
+            <point key="canvasLocation" x="1828.985507246377" y="69.642857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kN4-iR-dnb">

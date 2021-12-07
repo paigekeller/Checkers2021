@@ -21,6 +21,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func selectedSinglePlayer(_ sender: UIButton) {
+        AppData.playerType = 0
+    }
+    
+    @IBAction func selectedTwoPlayerLocal(_ sender: UIButton) {
+        AppData.playerType = 1
+    }
+    
+    @IBAction func selectedTwoPlayerOnline(_ sender: UIButton) {
+        AppData.playerType = 2
+    }
     
 //    @IBAction func onePlayer(_ sender: UIButton) {
 //        AppData.playerType = 1

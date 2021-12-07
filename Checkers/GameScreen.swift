@@ -9,8 +9,8 @@ import UIKit
 
 class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var playerType = AppData.playerType
     
-
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var player1Name: String!
@@ -19,6 +19,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var originalSpot = 0
     var movingToSpot = 0
     
+    @IBOutlet weak var playerTwoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,9 +28,12 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
+                
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "woodTexture")!)
+        
+        playerTwoLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        
+        print(playerType)
         
         // Do any additional setup after loading the view.
         
