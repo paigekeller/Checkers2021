@@ -13,6 +13,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var cellArray: [CustomCollectionCell] = []
     var player1Name: String!
     var player2Name: String!
     var moving: Bool = false
@@ -45,15 +46,15 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         
+        print(moving)
         if moving == true {
             movingToSpot = indexPath.row
+            moving = false
             move(movingTo: movingToSpot, movingFrom: originalSpot)
-            
         } else if moving == false {
             moving = true
             originalSpot = indexPath.row
         }
-        
     }
     
     
@@ -65,7 +66,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CustomCollectionCell
         
-        
+        cell.setImage(name: "")
         
         
         if (indexPath.row < 8) {
@@ -123,23 +124,35 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 cell.backgroundColor = UIColor.red
             }
         }
+        
+        
+        cellArray.append(cell)
+        
         return cell
     }
     
+    
     func move(movingTo: Int, movingFrom: Int) {
         
+        if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true {
+            
         //if not on a corner or edge
         if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
-            
-            if movingTo == movingFrom + 9 || movingTo == movingFrom + 7 || movingTo == movingFrom - 9 || movingTo == movingFrom - 7 { //propper move?
+                print("inside non Corner")
+                print(moving)
+            if movingTo == movingFrom - 9 || movingTo == movingFrom - 7 { //propper move
                 
-                print("moved!")
+                cellArray[movingTo].setImage(name: "redCheck")
+                cellArray[movingFrom].setImage(name: "")
                 
             }
             
         }
+        }//chechCheck
+        
         
     }
+    
     
     
 }
