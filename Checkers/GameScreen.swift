@@ -152,7 +152,23 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 
             }
             
+        } else { //is a corner or edge
+            
+            print("inside corner or edge")
+            if (movingFrom % 8) == 0 { //on left side of board
+                if movingTo == movingFrom - 7 { //propper move
+                    
+                    cellArray[movingTo].setImage(name: "redCheck")
+                    cellArray[movingFrom].setImage(name: "")
+                    
+                }
+                
+                
+                
+            }
+            
         }
+            
         }//chechCheck
         
         
