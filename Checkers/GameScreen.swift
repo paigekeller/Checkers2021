@@ -46,6 +46,10 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         
+        if (cellArray[indexPath.row].checkCheck() == false && moving == false) || (cellArray[indexPath.row].checkCheck() == true && moving == true){
+            //nothing
+        } else {
+        
         print(moving)
         if moving == true {
             movingToSpot = indexPath.row
@@ -54,6 +58,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         } else if moving == false {
             moving = true
             originalSpot = indexPath.row
+        }
         }
     }
     
