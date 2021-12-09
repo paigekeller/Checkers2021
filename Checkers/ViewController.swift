@@ -36,6 +36,13 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toGame", sender: "home")
     }
     
+    @IBAction func showPopUpButton(_ sender: UIButton) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RulePopUp") as! RulesPopUpViewController
+        self.addChild(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParent: self)
+    }
     
     @IBAction func unwind(_ seg: UIStoryboardSegue){
         AppData.playerType = Int()
