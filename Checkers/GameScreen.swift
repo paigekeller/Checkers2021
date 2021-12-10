@@ -150,6 +150,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 cellArray[movingTo].setImage(name: "redCheck")
                 cellArray[movingFrom].setImage(name: "")
                 
+            } else { //skip func :)
+                skip(to: movingTo, from: movingFrom)
             }
             
         } else { //is a corner or edge
@@ -162,18 +164,31 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                     cellArray[movingFrom].setImage(name: "")
                     
                 }
+                          
+            } else if movingFrom % 8 == 7 { //right side of board
                 
+                        if movingTo == movingFrom - 9 { //propper move
+                            
+                            cellArray[movingTo].setImage(name: "redCheck")
+                            cellArray[movingFrom].setImage(name: "")
+                            
+                        }
                 
-                
-            }
+                }
             
         }
             
-        }//chechCheck
+        }//chechCheck for proper move
         
         
     }
     
     
+    
+    func skip(to: Int, from: Int) {
+        if (to == from-14 || to == from-18) && (cellArray[from-7].chipColor == "black" || cellArray[from-7].chipColor == "black" ){
+            
+        }
+    }
     
 }

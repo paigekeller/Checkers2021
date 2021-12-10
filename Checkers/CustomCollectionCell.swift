@@ -10,6 +10,7 @@ import UIKit
 class CustomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
+    var chipColor = ""
     
     
     func configure(color: UIColor) {
@@ -24,8 +25,14 @@ class CustomCollectionCell: UICollectionViewCell {
     func setImage(name: String) {
         if name == "" {
             image.image = nil
+            chipColor = ""
         } else {
         image.image = UIImage(named: name)
+            if name == "redCheck" {
+                chipColor = "red"
+            } else {
+                chipColor = "black"
+            }
         }
     }
     
