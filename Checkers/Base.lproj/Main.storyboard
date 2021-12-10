@@ -33,28 +33,28 @@
                                         <rect key="frame" x="0.0" y="121" width="341" height="244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1) Can only move forward one on the diagonal" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHL-IY-gl4">
-                                                <rect key="frame" x="0.0" y="0.0" width="341" height="61"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="54.5"/>
                                                 <color key="backgroundColor" red="0.13000197529999999" green="0.3583791986" blue="0.45203014260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2) If your peice reaches the other side of the board the peice is then &quot;kinged&quot; and is the free to move forward or backwards" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7Z-r4-Lma">
-                                                <rect key="frame" x="0.0" y="61" width="341" height="61"/>
+                                                <rect key="frame" x="0.0" y="54.5" width="341" height="81"/>
                                                 <color key="backgroundColor" red="0.13000197529999999" green="0.3583791986" blue="0.45203014260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3) Jump over the other players pieces to steal them" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S76-sv-W8A">
-                                                <rect key="frame" x="0.0" y="122" width="341" height="61"/>
+                                                <rect key="frame" x="0.0" y="135.5" width="341" height="54"/>
                                                 <color key="backgroundColor" red="0.13000197529999999" green="0.3583791986" blue="0.45203014260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4) first player to steal all the other players peices, wins!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-cE-GA0">
-                                                <rect key="frame" x="0.0" y="183" width="341" height="61"/>
+                                                <rect key="frame" x="0.0" y="189.5" width="341" height="54.5"/>
                                                 <color key="backgroundColor" red="0.13000197529999999" green="0.3583791986" blue="0.45203014260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -114,16 +114,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="argyle-buttons-red-checker-asset-button-embellishment-boys-men-fall-game-piece" translatesAutoresizingMaskIntoConstraints="NO" id="Kc9-RP-Og8">
-                                <rect key="frame" x="60" y="225" width="294" height="299"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kc9-RP-Og8" secondAttribute="height" multiplier="294:299" id="6ga-Fi-uO9"/>
-                                </constraints>
+                                <rect key="frame" x="60" y="199" width="294" height="456"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-uN-iYg">
-                                <rect key="frame" x="87" y="571" width="240" height="167"/>
+                                <rect key="frame" x="87" y="655" width="240" height="157"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-w1-phJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="47.5"/>
                                         <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Single Player">
@@ -134,7 +131,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-ro-KAa">
-                                        <rect key="frame" x="0.0" y="58" width="240" height="51"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="240" height="48"/>
                                         <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Two Player Local (Coming Soon)">
@@ -145,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-mW-aue">
-                                        <rect key="frame" x="0.0" y="116" width="240" height="51"/>
+                                        <rect key="frame" x="0.0" y="109.5" width="240" height="47.5"/>
                                         <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Two Player Online (Coming Soon)">
@@ -170,10 +167,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-oE-4AD">
-                                <rect key="frame" x="77" y="151" width="261" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="p2Z-oE-4AD" secondAttribute="height" multiplier="87:22" id="BUE-uf-UVf"/>
-                                </constraints>
+                                <rect key="frame" x="77" y="151" width="261" height="41"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
                                 <color key="textColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -185,18 +179,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="KEz-hi-JRi" secondAttribute="bottom" constant="20" id="Fdk-2c-Kuf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="HRa-I8-zW0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="OgK-1R-2jj"/>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0736607" id="Tz8-dy-v89"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENQ-uN-iYg" secondAttribute="trailing" constant="87" id="W5G-7W-rlD"/>
-                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.333705" id="WBi-nA-ZWw"/>
-                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="ZcZ-FU-X71"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENQ-uN-iYg" secondAttribute="bottom" constant="124" id="mdl-fP-fbZ"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="top" secondItem="Kc9-RP-Og8" secondAttribute="bottom" constant="47" id="o06-v9-4Br"/>
-                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="top" secondItem="p2Z-oE-4AD" secondAttribute="bottom" constant="8" symbolic="YES" id="q5Y-bk-4Iz"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="rAC-SP-LeI"/>
-                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.186384" id="uPH-Jc-S0Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="Tj1-7Y-P44"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="KEz-hi-JRi" secondAttribute="bottom" constant="20" id="Ujo-IZ-IM4"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="top" secondItem="Kc9-RP-Og8" secondAttribute="bottom" id="Yhl-4u-VHL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENQ-uN-iYg" secondAttribute="trailing" constant="87" id="ZaQ-0P-QOO"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="top" secondItem="p2Z-oE-4AD" secondAttribute="bottom" constant="7" id="bEa-MH-bQl"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0457589" id="csl-IC-6if"/>
+                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="j01-LC-MsB"/>
+                            <constraint firstItem="ENQ-uN-iYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="mjl-L7-gOG"/>
+                            <constraint firstItem="Kc9-RP-Og8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="qFG-ZN-5jl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENQ-uN-iYg" secondAttribute="bottom" constant="50" id="r2A-dB-O1W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="wiU-rt-1ST"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2z-2N-Q5q">
