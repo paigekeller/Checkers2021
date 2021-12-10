@@ -95,7 +95,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SP2-OD-Uwd" firstAttribute="top" secondItem="8bK-yi-uon" secondAttribute="top" constant="137" id="5Fv-hO-W2k"/>
-                            <constraint firstItem="8bK-yi-uon" firstAttribute="trailing" secondItem="SP2-OD-Uwd" secondAttribute="trailing" constant="36" id="6jV-B8-8rB"/>
                             <constraint firstItem="8bK-yi-uon" firstAttribute="bottom" secondItem="SP2-OD-Uwd" secondAttribute="bottom" constant="146" id="EZ0-tT-KQa"/>
                             <constraint firstItem="SP2-OD-Uwd" firstAttribute="leading" secondItem="8bK-yi-uon" secondAttribute="leading" constant="37" id="br7-RK-wII"/>
                         </constraints>
@@ -186,7 +185,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="p2Z-oE-4AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="6NJ-qH-7hg"/>
                             <constraint firstItem="p2Z-oE-4AD" firstAttribute="top" secondItem="KEz-hi-JRi" secondAttribute="bottom" constant="20" id="Fdk-2c-Kuf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2Z-oE-4AD" secondAttribute="trailing" constant="76" id="HRa-I8-zW0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kc9-RP-Og8" secondAttribute="trailing" constant="60" id="OgK-1R-2jj"/>
