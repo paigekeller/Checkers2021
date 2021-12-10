@@ -19,6 +19,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var moving: Bool = false
     var originalSpot = 0
     var movingToSpot = 0
+    var currentColorTurn: String = "red" //always start with red
     
     @IBOutlet weak var playerTwoLabel: UILabel!
     
@@ -54,7 +55,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         if moving == true {
             movingToSpot = indexPath.row
             moving = false
-            move(movingTo: movingToSpot, movingFrom: originalSpot)
+            print(currentColorTurn)
+            if currentColorTurn == "red" {moveRed(movingTo: movingToSpot, movingFrom: originalSpot)} else {moveBlack(movingTo: movingToSpot, movingFrom: originalSpot)}
         } else if moving == false {
             moving = true
             originalSpot = indexPath.row
@@ -137,9 +139,12 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     
-    func move(movingTo: Int, movingFrom: Int) {
+    func moveRed(movingTo: Int, movingFrom: Int) {
         
-        if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true {
+        if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true && cellArray[movingFrom].chipColor == "red" {
+            
+            print("Here")
+            
             
         //if not on a corner or edge
         if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
@@ -177,16 +182,60 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 }
             
         }
-            
+            currentColorTurn = "black"
         }//chechCheck for proper move
-        
-        
     }
     
     
+    func moveBlack(movingTo: Int, movingFrom: Int) {
+        
+        if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true && cellArray[movingFrom].chipColor == "black" {
+        
+        //if not on a corner or edge
+        if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
+            
+                print("inside non Corner")
+
+            if movingTo == movingFrom + 9 || movingTo == movingFrom + 7 { //propper move
+                
+                cellArray[movingTo].setImage(name: "blackCheck")
+                cellArray[movingFrom].setImage(name: "")
+                
+            } else { //skip func :)
+                skip(to: movingTo, from: movingFrom)
+            }
+            
+        } else { //is a corner or edge
+            
+            print("inside corner or edge")
+            if (movingFrom % 8) == 0 { //on left side of board
+                if movingTo == movingFrom + 7 { //propper move
+                    
+                    cellArray[movingTo].setImage(name: "blackCheck")
+                    cellArray[movingFrom].setImage(name: "")
+                    
+                }
+                          
+            } else if movingFrom % 8 == 7 { //right side of board
+                
+                        if movingTo == movingFrom + 9 { //propper move
+                            
+                            cellArray[movingTo].setImage(name: "blackCheck")
+                            cellArray[movingFrom].setImage(name: "")
+                            
+                        }
+                
+                }
+            currentColorTurn = "red"
+        } //chechCheck for proper move
+            
+        }
+    }
+    
     
     func skip(to: Int, from: Int) {
-        if (to == from-14 || to == from-18) && (cellArray[from-7].chipColor == "black" || cellArray[from-7].chipColor == "black" ){
+        //assuming its red
+        if (to == from-14 && cellArray[from-7].chipColor == "black"){
             
         }
     }

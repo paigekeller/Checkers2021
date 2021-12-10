@@ -16,8 +16,10 @@ class CustomCollectionCell: UICollectionViewCell {
     func configure(color: UIColor) {
         if color == UIColor.red {
             image.image = UIImage(named: "redCheck")
+            chipColor = "red"
         } else {
             image.image = UIImage(named: "blackCheck")
+            chipColor = "black"
         }
     }
     
