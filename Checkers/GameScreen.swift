@@ -40,6 +40,13 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    @IBAction func rulePopUpButton(_ sender: UIButton) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RulePopUp") as! RulesPopUpViewController
+        self.addChild(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParent: self)
+    }
     
     
     
