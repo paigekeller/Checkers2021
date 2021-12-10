@@ -266,7 +266,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fye-1I-XU4"/>
+                    <navigationItem key="navigationItem" id="Fye-1I-XU4">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="nOo-8d-Ooh">
+                            <rect key="frame" x="176.5" y="5" width="61.5" height="34.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="rules">
+                                <color key="baseForegroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="rulePopUpButton:" destination="pek-D3-YpQ" eventType="touchUpInside" id="mIw-BL-VHt"/>
+                                <action selector="showPopUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImM-AQ-xd1"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="vvW-Ph-yDv" id="YNk-cW-eDF"/>
                         <outlet property="playerTwoLabel" destination="3bn-hu-koa" id="7Qw-eO-YEO"/>
