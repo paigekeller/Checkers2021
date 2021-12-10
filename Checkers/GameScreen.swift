@@ -140,7 +140,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     func moveRed(movingTo: Int, movingFrom: Int) {
-        
+        print("HEREEEEE \(cellArray[movingFrom].chipColor)")
         if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true && cellArray[movingFrom].chipColor == "red" {
             
             print("Here")
@@ -188,8 +188,11 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     func moveBlack(movingTo: Int, movingFrom: Int) {
-        
+        print("HEREEEEE \(cellArray[movingFrom].chipColor)")
         if cellArray[movingFrom].checkCheck() == true && cellArray[movingTo].checkCheck() != true && cellArray[movingFrom].chipColor == "black" {
+            
+            print("Here")
+            
         
         //if not on a corner or edge
         if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
@@ -226,10 +229,10 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                         }
                 
                 }
-            currentColorTurn = "red"
-        } //chechCheck for proper move
             
         }
+            currentColorTurn = "red"
+        }//chechCheck for proper move
     }
     
     
