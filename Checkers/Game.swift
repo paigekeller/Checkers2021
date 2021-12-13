@@ -9,12 +9,12 @@ import Foundation
 
 class Game {
     
-    var p1Chips: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false , 9: false , 10: false , 11: false , 12: false] //true = King
-    var p1ChipsStolen: [Int: Bool] = [:]
+    var p1Chips: [Chip] = []
+    var p1ChipsStolen: [Chip] = []
     var p1Name: String!
     
-    var p2Chips: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false , 9: false , 10: false , 11: false , 12: false] //true = King
-    var p2ChipsStolen: [Int: Bool] = [:]
+    var p2Chips: [Chip] = []
+    var p2ChipsStolen: [Chip] = []
     var p2Name: String!
     
     init(p1: String, p2: String) {

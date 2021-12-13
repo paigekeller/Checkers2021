@@ -20,13 +20,12 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var originalSpot = 0
     var movingToSpot = 0
     var currentColorTurn: String = "red" //always start with red
-    
+    let game = Game()
     @IBOutlet weak var playerTwoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let game = Game()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -87,13 +86,16 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         if indexPath.row % 2 == 0 {
         cell.backgroundColor = UIColor.black
             cell.configure(color: UIColor.black)
+            game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
         } else {
             cell.backgroundColor = UIColor.red
+            
         }
         } else if (indexPath.row < 16) {
             if indexPath.row % 2 != 0 {
             cell.backgroundColor = UIColor.black
                 cell.configure(color: UIColor.black)
+                game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
@@ -101,6 +103,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor.black
                 cell.configure(color: UIColor.black)
+                game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
@@ -120,6 +123,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if indexPath.row % 2 != 0 {
             cell.backgroundColor = UIColor.black
                 cell.configure(color: UIColor.red)
+                game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
@@ -127,6 +131,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor.black
                 cell.configure(color: UIColor.red)
+                game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
@@ -134,6 +139,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if indexPath.row % 2 != 0 {
             cell.backgroundColor = UIColor.black
                 cell.configure(color: UIColor.red)
+                game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
@@ -143,6 +149,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         cellArray.append(cell)
         
         return cell
+        
     }
     
     
@@ -244,10 +251,63 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     func skip(to: Int, from: Int) {
-        //assuming its red
-        if (to == from-14 && cellArray[from-7].chipColor == "black"){
+        if cellArray[from].chipColor == "red" {
+        if (to == from-14 && cellArray[from-7].chipColor == "black") {
+            cellArray[to].setImage(name: "redCheck")
+            cellArray[from].setImage(name: "")
+            var temp = Chip()
+            var i = 0
+            print("FROM HERE \(from)")
+            for each in game.p2Chips {
+                print(each.location)
+                
+                if each.location == from - 7 {
+                    temp = each
+                    print("THIS THIS THIS THIS")
+                    print(game.p2Chips[i])
+                    game.p2Chips.remove(at: i)
+                }
+                i += 1
+            }
+            game.p1ChipsStolen.append(temp)
+    
             
+        } else if (to == from-18 && cellArray[from-9].chipColor == "black") {
+            
+            cellArray[to].setImage(name: "redCheck")
+            cellArray[from].setImage(name: "")
+            var temp = Chip()
+            var i = 0
+            for each in game.p2Chips {
+                if each.location == from - 9 {
+                    temp = each
+                    print(game.p2Chips[i])
+                    game.p2Chips.remove(at: i)
+                }
+                i += 1
+            }
+            game.p1ChipsStolen.append(temp)
         }
+            
+            
+            
+            
+        } else //black turn {
+            if (to == from+14 && cellArray[from+7].chipColor == "red") {
+                cellArray[to].setImage(name: "blackCheck")
+                cellArray[from].setImage(name: "")
+                
+            } else if (to == from+18 && cellArray[from+9].chipColor == "red") {
+                
+                cellArray[to].setImage(name: "blackCheck")
+                cellArray[from].setImage(name: "")
+            }
+        
+        
+        print(game.p1ChipsStolen)
+        print(game.p1ChipsStolen[0].location)
+        print(game.p2Chips)
+        
     }
     
 }
