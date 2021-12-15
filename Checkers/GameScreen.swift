@@ -161,16 +161,23 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
             
         //if not on a corner or edge
-        if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
+        if (movingFrom > 0 && movingFrom < 7) || (movingFrom > 8 && movingFrom < 15) && (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) || (movingFrom > 56 && movingFrom < 63) {
                 print("inside non Corner")
                 print(moving)
             if movingTo == movingFrom - 9 || movingTo == movingFrom - 7 { //propper move
-                
+
+                for each in game.p1Chips {
+                    if each.location == movingFrom {
+                        each.location = movingTo
+                    }
+                }
                 cellArray[movingTo].setImage(name: "redCheck")
                 cellArray[movingFrom].setImage(name: "")
+                currentColorTurn = "black"
                 
             } else { //skip func :)
                 skip(to: movingTo, from: movingFrom)
+                currentColorTurn = "black"
             }
             
         } else { //is a corner or edge
@@ -179,18 +186,28 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if (movingFrom % 8) == 0 { //on left side of board
                 if movingTo == movingFrom - 7 { //propper move
                     
+                    for each in game.p1Chips {
+                        if each.location == movingFrom {
+                            each.location = movingTo
+                        }
+                    }
                     cellArray[movingTo].setImage(name: "redCheck")
                     cellArray[movingFrom].setImage(name: "")
-                    
+                    currentColorTurn = "black"
                 }
                           
             } else if movingFrom % 8 == 7 { //right side of board
                 
                         if movingTo == movingFrom - 9 { //propper move
                             
+                            for each in game.p1Chips {
+                                if each.location == movingFrom {
+                                    each.location = movingTo
+                                }
+                            }
                             cellArray[movingTo].setImage(name: "redCheck")
                             cellArray[movingFrom].setImage(name: "")
-                            
+                            currentColorTurn = "black"
                         }
                 
                 }
@@ -209,37 +226,54 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
         
         //if not on a corner or edge
-        if (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) {
+        if (movingFrom > 0 && movingFrom < 7) || (movingFrom > 8 && movingFrom < 15) || (movingFrom > 16 && movingFrom < 23) || (movingFrom > 24 && movingFrom < 31) || (movingFrom > 32 && movingFrom < 39) || (movingFrom > 40 && movingFrom < 47) || (movingFrom > 48 && movingFrom < 55) || (movingFrom > 56 && movingFrom < 63) {
             
                 print("inside non Corner")
 
             if movingTo == movingFrom + 9 || movingTo == movingFrom + 7 { //propper move
                 
+                for each in game.p2Chips {
+                    if each.location == movingFrom {
+                        each.location = movingTo
+                    }
+                }
                 cellArray[movingTo].setImage(name: "blackCheck")
                 cellArray[movingFrom].setImage(name: "")
+                currentColorTurn = "red"
                 
             } else { //skip func :)
                 skip(to: movingTo, from: movingFrom)
+                currentColorTurn = "red"
             }
             
         } else { //is a corner or edge
             
             print("inside corner or edge")
             if (movingFrom % 8) == 0 { //on left side of board
-                if movingTo == movingFrom + 7 { //propper move
+                if movingTo == movingFrom + 9 { //propper move
                     
+                    for each in game.p2Chips {
+                        if each.location == movingFrom {
+                            each.location = movingTo
+                        }
+                    }
                     cellArray[movingTo].setImage(name: "blackCheck")
                     cellArray[movingFrom].setImage(name: "")
-                    
+                    currentColorTurn = "red"
                 }
                           
             } else if movingFrom % 8 == 7 { //right side of board
                 
-                        if movingTo == movingFrom + 9 { //propper move
+                        if movingTo == movingFrom + 7 { //propper move
                             
+                            for each in game.p2Chips {
+                                if each.location == movingFrom {
+                                    each.location = movingTo
+                                }
+                            }
                             cellArray[movingTo].setImage(name: "blackCheck")
                             cellArray[movingFrom].setImage(name: "")
-                            
+                            currentColorTurn = "red"
                         }
                 
                 }
@@ -251,21 +285,26 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     func skip(to: Int, from: Int) {
+        print("ORIGIONAL CHIPS HERE")
+        print(game.p1Chips)
+        print(game.p2Chips)
+        print("/////////////////////")
         if cellArray[from].chipColor == "red" {
         if (to == from-14 && cellArray[from-7].chipColor == "black") {
             cellArray[to].setImage(name: "redCheck")
             cellArray[from].setImage(name: "")
+            cellArray[from-7].setImage(name: "")
             var temp = Chip()
             var i = 0
-            print("FROM HERE \(from)")
+            
             for each in game.p2Chips {
-                print(each.location)
+                print("for each runs here")
                 
                 if each.location == from - 7 {
                     temp = each
-                    print("THIS THIS THIS THIS")
-                    print(game.p2Chips[i])
+            
                     game.p2Chips.remove(at: i)
+                    print("Inside of skipped peice")
                 }
                 i += 1
             }
@@ -273,41 +312,73 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
             
         } else if (to == from-18 && cellArray[from-9].chipColor == "black") {
-            
             cellArray[to].setImage(name: "redCheck")
             cellArray[from].setImage(name: "")
+            cellArray[from-9].setImage(name: "")
             var temp = Chip()
             var i = 0
             for each in game.p2Chips {
+                print("for each runs here")
                 if each.location == from - 9 {
                     temp = each
-                    print(game.p2Chips[i])
+               
                     game.p2Chips.remove(at: i)
+                    print("Inside of skipped peice")
                 }
                 i += 1
             }
             game.p1ChipsStolen.append(temp)
         }
             
+            print(game.p1ChipsStolen)
+            print(game.p2Chips)
             
             
-            
-        } else //black turn {
+        } else { //black turn
+            print("INSIDE OF BLACK SKIP")
             if (to == from+14 && cellArray[from+7].chipColor == "red") {
+            
                 cellArray[to].setImage(name: "blackCheck")
                 cellArray[from].setImage(name: "")
-                
+            cellArray[from+7].setImage(name: "")
+            var temp = Chip()
+            var i = 0
+            for each in game.p1Chips {
+                print("for each runs here")
+                if each.location == from + 9 {
+                    temp = each
+                    game.p1Chips.remove(at: i)
+                    print("Inside of skipped peice")
+                }
+                i += 1
+            }
+            game.p2ChipsStolen.append(temp)
+            
             } else if (to == from+18 && cellArray[from+9].chipColor == "red") {
                 
                 cellArray[to].setImage(name: "blackCheck")
                 cellArray[from].setImage(name: "")
+                
+                cellArray[from+9].setImage(name: "")
+                var temp = Chip()
+                var i = 0
+                for each in game.p1Chips {
+                    print("for each runs here")
+                    if each.location == from + 9 {
+                        temp = each
+                        game.p1Chips.remove(at: i)
+                        print("Inside of skipped peice")
+                    }
+                    i += 1
+                }
+                game.p2ChipsStolen.append(temp)
+                
             }
         
         
-        print(game.p1ChipsStolen)
-        print(game.p1ChipsStolen[0].location)
-        print(game.p2Chips)
+        print(game.p2ChipsStolen)
+        print(game.p1Chips)
         
     }
-    
+    }
 }
