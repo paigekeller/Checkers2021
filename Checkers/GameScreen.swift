@@ -21,7 +21,11 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var movingToSpot = 0
     var currentColorTurn: String = "red" //always start with red
     let game = Game()
+    
     @IBOutlet weak var playerTwoLabel: UILabel!
+    
+    @IBOutlet weak var playerTwoScore: UILabel!
+    @IBOutlet weak var playerOneScore: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "woodTexture")!)
         
         playerTwoLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        playerTwoScore.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
         print(playerType)
         
@@ -84,8 +89,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         if (indexPath.row < 8) {
         if indexPath.row % 2 == 0 {
-        cell.backgroundColor = UIColor.black
-            cell.configure(color: UIColor.black)
+        cell.backgroundColor = UIColor(red: 120/255.0, green: 150/255.0, blue: 200/255.0, alpha: 1)
+            cell.configure(color: UIColor.darkGray)
             game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
         } else {
             cell.backgroundColor = UIColor.red
@@ -93,35 +98,35 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         } else if (indexPath.row < 16) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.black
-                cell.configure(color: UIColor.black)
+            cell.backgroundColor = UIColor.darkGray
+                cell.configure(color: UIColor.darkGray)
                 game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
         } else if (indexPath.row < 24) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.black
-                cell.configure(color: UIColor.black)
+            cell.backgroundColor = UIColor.darkGray
+                cell.configure(color: UIColor.darkGray)
                 game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
                 cell.backgroundColor = UIColor.red
             }
         } else if (indexPath.row < 32) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.darkGray
             } else {
                 cell.backgroundColor = UIColor.red
             }
         } else if (indexPath.row < 40) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.darkGray
             } else {
                 cell.backgroundColor = UIColor.red
             }
         }else if (indexPath.row < 48) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.darkGray
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
@@ -129,7 +134,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             }
         } else if (indexPath.row < 56) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.darkGray
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
@@ -137,7 +142,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             }
         } else if (indexPath.row < 64) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.darkGray
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
