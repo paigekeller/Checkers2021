@@ -166,17 +166,22 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 print(moving)
             if movingTo == movingFrom - 9 || movingTo == movingFrom - 7 { //propper move
 
+                cellArray[movingTo].setImage(name: "redCheck")
+                cellArray[movingFrom].setImage(name: "")
+                currentColorTurn = "black"
                 for each in game.p1Chips {
                     if each.location == movingFrom {
                         each.location = movingTo
                     }
                 }
-                cellArray[movingTo].setImage(name: "redCheck")
-                cellArray[movingFrom].setImage(name: "")
-                currentColorTurn = "black"
                 
             } else { //skip func :)
                 skip(to: movingTo, from: movingFrom)
+                for each in game.p1Chips {
+                    if each.location == movingFrom {
+                        each.location = movingTo
+                    }
+                }
                 currentColorTurn = "black"
             }
             
@@ -185,29 +190,28 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             print("inside corner or edge")
             if (movingFrom % 8) == 0 { //on left side of board
                 if movingTo == movingFrom - 7 { //propper move
-                    
+                    cellArray[movingTo].setImage(name: "redCheck")
+                    cellArray[movingFrom].setImage(name: "")
+                    currentColorTurn = "black"
                     for each in game.p1Chips {
                         if each.location == movingFrom {
                             each.location = movingTo
                         }
                     }
-                    cellArray[movingTo].setImage(name: "redCheck")
-                    cellArray[movingFrom].setImage(name: "")
-                    currentColorTurn = "black"
                 }
                           
             } else if movingFrom % 8 == 7 { //right side of board
                 
                         if movingTo == movingFrom - 9 { //propper move
-                            
+                        
+                            cellArray[movingTo].setImage(name: "redCheck")
+                            cellArray[movingFrom].setImage(name: "")
+                            currentColorTurn = "black"
                             for each in game.p1Chips {
                                 if each.location == movingFrom {
                                     each.location = movingTo
                                 }
                             }
-                            cellArray[movingTo].setImage(name: "redCheck")
-                            cellArray[movingFrom].setImage(name: "")
-                            currentColorTurn = "black"
                         }
                 
                 }
@@ -232,18 +236,23 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
             if movingTo == movingFrom + 9 || movingTo == movingFrom + 7 { //propper move
                 
+                cellArray[movingTo].setImage(name: "blackCheck")
+                cellArray[movingFrom].setImage(name: "")
+                currentColorTurn = "red"
                 for each in game.p2Chips {
                     if each.location == movingFrom {
                         each.location = movingTo
                     }
                 }
-                cellArray[movingTo].setImage(name: "blackCheck")
-                cellArray[movingFrom].setImage(name: "")
-                currentColorTurn = "red"
                 
             } else { //skip func :)
                 skip(to: movingTo, from: movingFrom)
                 currentColorTurn = "red"
+                for each in game.p2Chips {
+                    if each.location == movingFrom {
+                        each.location = movingTo
+                    }
+                }
             }
             
         } else { //is a corner or edge
@@ -252,28 +261,28 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             if (movingFrom % 8) == 0 { //on left side of board
                 if movingTo == movingFrom + 9 { //propper move
                     
+                    cellArray[movingTo].setImage(name: "blackCheck")
+                    cellArray[movingFrom].setImage(name: "")
+                    currentColorTurn = "red"
                     for each in game.p2Chips {
                         if each.location == movingFrom {
                             each.location = movingTo
                         }
                     }
-                    cellArray[movingTo].setImage(name: "blackCheck")
-                    cellArray[movingFrom].setImage(name: "")
-                    currentColorTurn = "red"
                 }
                           
             } else if movingFrom % 8 == 7 { //right side of board
                 
                         if movingTo == movingFrom + 7 { //propper move
                             
+                            cellArray[movingTo].setImage(name: "blackCheck")
+                            cellArray[movingFrom].setImage(name: "")
+                            currentColorTurn = "red"
                             for each in game.p2Chips {
                                 if each.location == movingFrom {
                                     each.location = movingTo
                                 }
                             }
-                            cellArray[movingTo].setImage(name: "blackCheck")
-                            cellArray[movingFrom].setImage(name: "")
-                            currentColorTurn = "red"
                         }
                 
                 }
@@ -319,9 +328,10 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             var i = 0
             for each in game.p2Chips {
                 print("for each runs here")
+                print(each.location)
+                print(from-9)
                 if each.location == from - 9 {
                     temp = each
-               
                     game.p2Chips.remove(at: i)
                     print("Inside of skipped peice")
                 }
