@@ -11,7 +11,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     var playerType = AppData.playerType
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var player1Turn: UIImageView!
+    @IBOutlet weak var player2Turn: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var cellArray: [CustomCollectionCell] = []
     var player1Name: String!
@@ -89,64 +90,64 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         if (indexPath.row < 8) {
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.darkGray
-            cell.configure(color: UIColor.darkGray)
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
+            cell.configure(color: UIColor.black)
             game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
         } else {
-            cell.backgroundColor = UIColor.red
+            cell.backgroundColor = UIColor.darkGray
             
         }
         } else if (indexPath.row < 16) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.darkGray
-                cell.configure(color: UIColor.darkGray)
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
+                cell.configure(color: UIColor.black)
                 game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         } else if (indexPath.row < 24) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.darkGray
-                cell.configure(color: UIColor.darkGray)
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
+                cell.configure(color: UIColor.black)
                 game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         } else if (indexPath.row < 32) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         } else if (indexPath.row < 40) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         }else if (indexPath.row < 48) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         } else if (indexPath.row < 56) {
             if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         } else if (indexPath.row < 64) {
             if indexPath.row % 2 != 0 {
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.78 , alpha: 1)
                 cell.configure(color: UIColor.red)
                 game.p1Chips.append(Chip(color: "red", loc: indexPath.row))
             } else {
-                cell.backgroundColor = UIColor.red
+                cell.backgroundColor = UIColor.darkGray
             }
         }
         
@@ -174,6 +175,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 cellArray[movingTo].setImage(name: "redCheck")
                 cellArray[movingFrom].setImage(name: "")
                 currentColorTurn = "black"
+                player1Turn.isHidden = true
+                player2Turn.isHidden = false
                 for each in game.p1Chips {
                     if each.location == movingFrom {
                         each.location = movingTo
@@ -188,6 +191,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                     }
                 }
                 currentColorTurn = "black"
+                player1Turn.isHidden = true
+                player2Turn.isHidden = false
             }
             
         } else { //is a corner or edge
@@ -198,6 +203,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                     cellArray[movingTo].setImage(name: "redCheck")
                     cellArray[movingFrom].setImage(name: "")
                     currentColorTurn = "black"
+                    player1Turn.isHidden = true
+                    player2Turn.isHidden = false
                     for each in game.p1Chips {
                         if each.location == movingFrom {
                             each.location = movingTo
@@ -212,6 +219,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                             cellArray[movingTo].setImage(name: "redCheck")
                             cellArray[movingFrom].setImage(name: "")
                             currentColorTurn = "black"
+                            player1Turn.isHidden = true
+                            player2Turn.isHidden = false
                             for each in game.p1Chips {
                                 if each.location == movingFrom {
                                     each.location = movingTo
@@ -223,6 +232,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
         }
             currentColorTurn = "black"
+            player1Turn.isHidden = true
+            player2Turn.isHidden = false
         }//chechCheck for proper move
     }
     
@@ -244,6 +255,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 cellArray[movingTo].setImage(name: "blackCheck")
                 cellArray[movingFrom].setImage(name: "")
                 currentColorTurn = "red"
+                player2Turn.isHidden = true
+                player1Turn.isHidden = false
                 for each in game.p2Chips {
                     if each.location == movingFrom {
                         each.location = movingTo
@@ -253,6 +266,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             } else { //skip func :)
                 skip(to: movingTo, from: movingFrom)
                 currentColorTurn = "red"
+                player2Turn.isHidden = true
+                player1Turn.isHidden = false
                 for each in game.p2Chips {
                     if each.location == movingFrom {
                         each.location = movingTo
@@ -269,6 +284,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                     cellArray[movingTo].setImage(name: "blackCheck")
                     cellArray[movingFrom].setImage(name: "")
                     currentColorTurn = "red"
+                    player2Turn.isHidden = true
+                    player1Turn.isHidden = false
                     for each in game.p2Chips {
                         if each.location == movingFrom {
                             each.location = movingTo
@@ -283,6 +300,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                             cellArray[movingTo].setImage(name: "blackCheck")
                             cellArray[movingFrom].setImage(name: "")
                             currentColorTurn = "red"
+                            player2Turn.isHidden = true
+                            player1Turn.isHidden = false
                             for each in game.p2Chips {
                                 if each.location == movingFrom {
                                     each.location = movingTo
@@ -294,6 +313,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
         }
             currentColorTurn = "red"
+            player2Turn.isHidden = true
+            player1Turn.isHidden = false
         }//chechCheck for proper move
     }
     
