@@ -89,7 +89,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         if (indexPath.row < 8) {
         if indexPath.row % 2 == 0 {
-        cell.backgroundColor = UIColor(red: 120/255.0, green: 150/255.0, blue: 200/255.0, alpha: 1)
+            cell.backgroundColor = UIColor.darkGray
             cell.configure(color: UIColor.darkGray)
             game.p2Chips.append(Chip(color: "black", loc: indexPath.row))
         } else {
