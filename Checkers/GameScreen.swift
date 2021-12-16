@@ -59,8 +59,9 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         
+        // if you clicked on a square wo a chip or your moving to a square with a chip
         if (cellArray[indexPath.row].checkCheck() == false && moving == false) || (cellArray[indexPath.row].checkCheck() == true && moving == true){
-            //nothing
+            //invalid move
         } else {
         
         print(moving)
