@@ -127,7 +127,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="47.5"/>
                                         <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Single Player">
+                                        <buttonConfiguration key="configuration" style="plain" title="Single Player (Coming Soon)">
                                             <color key="baseForegroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="54.5" width="240" height="48"/>
                                         <color key="backgroundColor" red="0.052157776439999998" green="0.11746223359999999" blue="0.21034618259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Local (Coming Soon)">
+                                        <buttonConfiguration key="configuration" style="plain" title="Two Player Local">
                                             <color key="baseForegroundColor" red="0.99043077229999998" green="0.95145362619999996" blue="0.79997521640000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
