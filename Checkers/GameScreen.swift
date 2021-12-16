@@ -236,6 +236,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             player1Turn.isHidden = true
             player2Turn.isHidden = false
         }//chechCheck for proper move
+        playerOneScore.text = ("Score: \(game.p1ChipsStolen.count)")
+        playerTwoScore.text = ("Score: \(game.p2ChipsStolen.count)")
     }
     
     
@@ -317,6 +319,8 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             player2Turn.isHidden = true
             player1Turn.isHidden = false
         }//chechCheck for proper move
+        playerOneScore.text = ("Score: \(game.p1ChipsStolen.count)")
+        playerTwoScore.text = ("Score: \(game.p2ChipsStolen.count)")
     }
     
     
@@ -417,5 +421,7 @@ class GameScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         print(game.p1Chips)
         
     }
+        playerOneScore.text = ("Score: \(game.p1ChipsStolen.count)")
+        playerTwoScore.text = ("Score: \(game.p2ChipsStolen.count)")
     }
 }
